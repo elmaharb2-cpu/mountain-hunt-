@@ -111,8 +111,7 @@ const loader = new GLTFLoader();
   your GitHub rifle file.
 */
 
-const MODEL_URL =
-  "./dae_-__rigby_hunting_rifle_-_game_ready_asset.glb";
+const MODEL_URL = "./rifle.glb";
 
 
 loader.load(
