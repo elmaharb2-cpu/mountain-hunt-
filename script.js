@@ -450,6 +450,47 @@ if (loadingScreen) {
 );
 
 
+// ------------------------------------------------------------
+// REAL 3D TERRAIN
+// ------------------------------------------------------------
+
+const terrainLoader = new GLTFLoader();
+
+terrainLoader.load(
+  "./terrain.glb",
+
+  function (gltf) {
+    const terrain = gltf.scene;
+
+    terrain.position.set(0, -3, -35);
+    terrain.scale.set(12, 12, 12);
+
+    terrain.traverse(function (object) {
+      if (object.isMesh) {
+        object.castShadow = true;
+        object.receiveShadow = true;
+      }
+    });
+
+    scene.add(terrain);
+
+    console.log("TERRAIN LOADED");
+  },
+
+  function (xhr) {
+    if (xhr.total) {
+      console.log(
+        Math.round((xhr.loaded / xhr.total) * 100) +
+        "% terrain loaded"
+      );
+    }
+  },
+
+  function (error) {
+    console.error("TERRAIN ERROR:", error);
+  }
+);
+
 // ---------------------------------------------------------
 // BIRDS
 // ---------------------------------------------------------
