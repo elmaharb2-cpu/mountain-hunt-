@@ -415,6 +415,11 @@ loader.load(
     console.log(
       "RIFLE LOADED"
     );
+     const loadingScreen = document.getElementById("loading");
+
+if (loadingScreen) {
+    loadingScreen.style.display = "none";
+}
   },
 
   function (xhr) {
