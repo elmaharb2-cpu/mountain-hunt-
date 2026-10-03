@@ -112,7 +112,7 @@ const loader = new GLTFLoader();
 */
 
 const MODEL_URL =
-  "./dae_-_rigby_hunting_rifle_-_game_ready_asset.glb";
+  "./dae_-__rigby_hunting_rifle_-_game_ready_asset.glb";
 
 
 loader.load(
